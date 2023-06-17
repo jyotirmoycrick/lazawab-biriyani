@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="cart.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>Cart</title>
+</head>
+<body>
+
+  <nav class="nav">
+    <ul class="ul-1">
+        <li class="li-1" id="top-logo"><a href="index.html" class="nav-a"> <img src="Lazabab.png" alt="logo" style="height: 50px;" ></a></li>
+        <li class="li-1" id="j-1"><a href="#" class="nav-a"><img src="food.svg" style="height: 30px;" class="food">&nbsp;&nbsp;Top Foods</a></li>
+        <li class="li-1" id="j-2"><input type="text" placeholder="&nbsp;&nbsp;Search your favourite food here"class="s-box" id="search-box"><i class="fa-sharp fa-solid fa-magnifying-glass" id="mag"></i></li>
+        <li class="li-1" id="j-3"><a href="#" class="nav-a"><i class="fa-solid fa-cart-shopping"></i>&nbsp; Cart</a></li>
+        <li class="li-1" id="j-4"><a href="#" class="nav-a"><img src="moped.svg" style="height: 25px;" class="moped"> My Order</a></li>
+        <li class="li-1" id="j-5"><a href="#" class="nav-a"><i class="fa-solid fa-circle-user"></i>&nbsp; Login / Sign up </a></li>
+    </ul>
+</nav>
+
+
+    <br>
+
+    <div class="cart">
+        <div class="cart-items">
+          <div class="cart-item">
+            <div class="item-img">
+              <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/12/chicken-biryani-recipe.jpg" style="height: 150px;">
+            </div>
+            <div class="item-details">
+              <h3>Chicken Biryani</h3>
+              <p>Quantity: 1</p>
+              <p>Price: $12.99</p>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div class="item-img">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8O4yqvbAcMTheuIipqoNuMkqz3vetKz0CpMqVIeKsQy201WyoVUkgAEtfsZFSynysfx8&usqp=CAU" style="height: 150px;">
+            </div>
+            <div class="item-details">
+              <h3>Butter Chicken</h3>
+              <p>Quantity: 2</p>
+              <p>Price: $18.99</p>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="cart-total">
+          <h4>Total: $51.97</h4>
+          <a href="check.html"><button class="checkout-btn">Checkout</button></a>
+        </div>
+      </div>
+
+      <footer>
+
+        <script>
+
+            // Remove item from cart when remove button is clicked
+const removeBtns = document.querySelectorAll('.remove-btn');
+
+removeBtns.forEach(removeBtn => {
+  removeBtn.addEventListener('click', e => {
+    const item = e.target.parentElement.parentElement;
+    item.remove();
+    updateTotal();
+  });
+});
+
+// Calculate cart total
+function updateTotal() {
+  const items = document.querySelectorAll('.cart-item');
+  let total = 0;
+
+  items.forEach(item => {
+    const price = item.querySelector('p:last-child').textContent;
+    total += parseFloat(price.replace('$', ''));
+  });
+
+  const totalEl = document.querySelector('.cart-total h4');
+  totalEl.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+
+
+        </script>
+
+
+      </footer>
+      
+</body>
+</html>

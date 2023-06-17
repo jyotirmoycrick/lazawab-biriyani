@@ -1,0 +1,178 @@
+/* Reset Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General Styles */
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-menu li {
+    margin-left: 2rem;
+  }
+  
+  .nav-menu a {
+    color: #333;
+  }
+  
+  .hero {
+    background-image: url("https://s3-ap-south-1.amazonaws.com/ricedigitals3bucket/AUPortalContent/2019/05/31140328/university-contactban.jpg");
+    
+    background-size: 1600px ;
+    background-position: center;
+    background-repeat:no-repeat ;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero h2
+  {
+    color: white;
+    font-weight: 600;
+  }
+  
+  .hero p {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .hero  a
+  {
+    color: white;
+  }
+  
+  .cta-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  
+  .cta-btn:hover {
+    background-color: #0062cc;
+    cursor: pointer;
+  }
+  
+  /* Default styles */
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 1rem;
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #0258AF;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+ 
+  
+  nav ul li a:hover:before {
+    transform: scaleX(1);
+  }
+  
+  .cta:hover
+  {
+    background-color: yellow;
+    color: black;
+  }
+  
+
+  nav
+  {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  /* Media queries */
+  @media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    nav ul {
+      flex-direction: column;
+    }
+    
+    nav li {
+      margin: 0.5rem 0;
+    }
+  }
+  
